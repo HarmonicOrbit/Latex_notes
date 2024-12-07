@@ -1,0 +1,54 @@
+\documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		
+\usepackage{blindtext}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage[greek,english]{babel}
+\usepackage{alphabeta}
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{quantikz}
+
+%SetFonts
+
+%SetFonts
+
+
+\title{Εργασία Κβαντικής Μηχανικής Μάθησης}
+\author{Αλκίνοος Παπαγεωργόπουλος 1115201900142}
+\date{}							% Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+
+\centering
+
+\section{Μέρος Α}
+
+Το κύκλωμα που υλοποιείται στην πρώτη περίπτωση εμφανίζεται παρακάτω:
+
+\begin{quantikz}
+    \lstick{\text{qubit 0}} & \gate{RX(f_0)} & \gate{Rot(\theta_0, \theta_1, \theta_2)} & \gate{Rot(\theta_6, \theta_7, \theta_8)} & \qw \\
+    \lstick{\text{qubit 1}} & \gate{RX(f_1)} & \gate{Rot(\theta_3, \theta_4, \theta_5)} & \gate{Rot(\theta_9, 0, 0)} & \qw \\
+\end{quantikz}
+
+Το κύκλωμα χρησιμοποιεί 10 παραμέτρους τις οποίες τις κάνει rotate, συνεπώς χρησιμοποιούμε κωδικοποίηση γωνίας στο κύκλωμα.
+Για την εκπαίδευση του κυκλώματος, κάνουμε χρήση του \verb|GradientDescentOptimizer| της Pennylake.
+
+\section{Μέρος Β}
+
+Στα πλαίσια του μέρους Β, εισάγουμε ένα entaglement layer. Το κύκλωμα εμφανίζεται παρακάτω:
+
+\begin{quantikz}
+    \lstick{\text{qubit 0}} & \gate{RX(f_0)} & \gate{Rot(\theta_0, \theta_1, \theta_2)} & \ctrl{1} & \gate{Rot(\theta_6, \theta_7, \theta_8)} & \qw \\
+    \lstick{\text{qubit 1}} & \gate{RX(f_1)} & \gate{Rot(\theta_3, \theta_4, \theta_5)} & \targ{} & \gate{Rot(\theta_9, \theta_{10}, \theta_{11})} & \qw \\
+\end{quantikz}
+
+Το κύκλωμα χρησιμοποιεί 12 παραμέτρους και κάνει χρήση των ήδη υλοποιημένων συναρτήσεων με τη διαφορά ότι έχουμε εισάγει το entaglement layer.
+
+\end{document}  
