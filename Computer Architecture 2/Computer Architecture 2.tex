@@ -1,0 +1,234 @@
+\documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		
+\usepackage{blindtext}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage[greek,english]{babel}
+\usepackage{alphabeta}
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex
+\usepackage{listings}		
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage{tikz}
+
+
+%SetFonts
+
+%SetFonts
+
+
+\title{Αρχιτεκτονική 2 Σημειώσεις για εξετάσεις}
+\author{Κωνσταντίνος Ζουριδάκης}
+\date{}							% Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+
+\section{Δυναμική ενέργεια και ισχύς}
+\[\text{Δυναμική Ενέργεια} = \frac{1}{2} C V^2 \]
+ 
+ \[\text{Δυναμική Ισχύς} = \frac{1}{2} C V^2 \overbrace{f_v}^\text{Συχνότητα μεταβάσεων}\]
+ 
+\section{Κόστος ολοκληρωμένων κυκλωμάτων}
+
+ \[ \text{Cost}= \frac{C_3+CT_3+C_{PT}}{Y}\]  
+ Όπου: \\
+ $\text{Cost} = \text{Κόστος ολοκληρωμένου κυκλώματος}$ \\
+ $C_3 = \text{Κόστος κύβου}$ \\
+ $CT_3 = \text{Κόστος δοκιμής κύβου}$ \\
+ $C_{PT} = \text{Κόστος συσκευασίας και τελικής δοκιμής}$ \\
+ $Y = \text{Εσοδεία τελικής δοκιμής}$
+ 
+ \[C_3 = \frac{C_{PL}}{CPL_3 \times Y_3}\]
+ Όπου:\\
+ $C_{PL} = \text{Κόστος πλακιδίου}$ \\
+ $CPL_3 = \text{Κύβοι ανά πλακίδιο}$ \\
+ $Y_3 = \text{Εσοδεία κύβων}$
+ 
+ \[CPL_3 = \frac{\pi \times \frac{(d_{PL})}{2}^2}{S_3} - \frac{\pi \times d_{PL}}{\sqrt{2 \times S_3}}\]
+ Όπου; \\
+ $d_{PL} = \text{Διάμετρος πλακιδίου}$ \\
+ $S_3 = \text{Επιφάνεια κύβου}$ \\
+
+\textbf{Bose-Einstein τύπος:}
+\[Y_3 = Y_{PL} \frac{1}{(1 + \text{imp} \times S_3)^N}\]
+Όπου:\\
+$Y_{PL} = \text{Εσοδεία πλακιδίων}$ \\
+$\text{imp} = \text{Ατέλειες ανά μονάδα επιφανείας}$\\
+$N = \text{Συντελεστής πολυπλοκότητας διαδικασίας}$
+
+\section{Φερεγγυότητα}
+
+\[MTBF = MTTF + MTTR\]
+
+\[\text{Availability} = \frac{MTTF}{MTBF}\]
+Όπου: \\
+$MTTF = \text{Mean time to failure}$\\
+$MTTR = \text{Mean time to repair}$\\
+$MTBF = \text{Mean time between failures}$
+
+\section{Μέτρηση της απόδοσης}
+
+Επιτάχυνση του $X$ σε σχέση με τον $Y$:\\
+
+\[\text{Speedup}_{XY} = \frac{\text{Χρόνος Εκτέλεσης}_Y}{\text{Χρόνος Εκτέλεσης}_X}\]
+
+\section{Νόμος του Amdahl}
+
+\[\text{Χρόνος Εκτέλεσης}_{\text{νέος}} = \text{Χρόνος εκτέλεσης}_{\text{παλιός}} \times \left((1-\text{Κλάσμα}_{\text{βελτίωσης}}) + \frac{\text{Κλάσμα}_{\text{βελτίωσης}}}{\text{Επιτάχυνση}_{\text{βελτίωσης}}}\right)\]
+
+\[\text{Επιτάχυνση}_{\text{συνολική}} = \frac{\text{Χρόνος εκτέλεσης}_{\text{παλιός}}}{\text{Χρόνος εκτέλεσης}_{\text{νέος}}} = \frac{1}{(1-\text{Κλάσμα}_{\text{βελτίωσης}})+\frac{\text{Κλάσμα}_{\text{βελτίωσης}}}{\text{Επιτάχυνση}_{\text{βελτίωσης}}}}\]
+
+\section{Εξίσωση απόδοσης επεξεργαστή}
+
+\[\text{Χρόνος CPU} = \text{Κύκλοι ρολογιού CPU για ένα πρόγραμμα} \times \text{Χρόνος κύκλου 	ρολογιού}\]
+
+\[ CPI = \frac{\text{Κύκλοι ρολογιού CPU για ένα πρόγραμμα}}{\text{Πλήθος εντολών}}\]
+
+\[\text{Χρόνος CPU} = \text{Πλήθος εντολών} \times \text{Κύκλοι ανά εντολή} \times \text{Χρόνος κύκλου ρολογιού}\]
+
+\[\frac{\text{Εντολές}}{\text{Πρόγραμμα}} \times \frac{\text{Κύκλοι ρολογιού}}{\text{Εντολή}} \times \frac{\text{Δευτερόλεπτα}}{\text{Χρόνος κύκλου}} =
+ \frac{\text{Δευτερόλεπτα}}{\text{Πρόγραμμα}} = \text{Χρόνος CPU}\]
+
+\[\text{Κύκλοι ρολογιού CPU} = \sum_{i=1}^n \text{Πλήθος εντολών}_i \times CPI_i\]
+
+\[\text{Χρόνος CPU} = \left(\sum_{i=1}^n \text{Πλήθος εντολών}_i \times CPI_i \right) \times \text{Χρόνος κύκλου ρολογιού}\]
+
+\section{Αστοχίες}
+
+\[\frac{\text{Αστοχίες}}{\text{Εντολή}} = \frac{\text{Ρυθμός αστοχίας} \times \text{Προσπελάσεις μνήμης}}{\text{Πλήθος εντολών}} = \text{Ρυθμός αστοχίας} \times \frac{\text{Προσπελάσεις μνήμης}}{\text{Εντολή}} \]
+
+\[\text{Μέσος χρόνος προσπέλασης μνήμης} = \text{Χρόνος ευστοχίας} + \text{Ρυθμός αστοχίας} \times \text{Ποινή αστοχίας}\]
+
+\section{Διοχέτευση}
+
+\[CPI \ \text{διοχέτευσης} = CPI_I  + \mathcal{S} + \mathcal{D} + \mathcal{C}\]
+Όπου: \\
+$CPI_I = CPI \ \text{ιδανικής διοχέτευσης}$ \\
+$\mathcal{S} = \text{Καθυστερήσεις δομής}$ \\
+$\mathcal{D} = \text{Καθυστερήσεις κινδύνων δεδομένων}$ \\
+$\mathcal{C} = \text{Καθυστερήσεις ελέγχου}$
+
+\subsection{Κίνδυνοι δεδομένων}
+\begin{itemize}
+	\item Ανάγνωση μετά την εγγραφή.
+	\item Εγγραφή μετά την εγγραφή.
+	\item Εγγραφή μετά την ανάγωνση.
+\end{itemize}
+
+Μια εντολή εξαρτάται από την ολοκλήρωση μιας
+προσπέλασης δεδομένων μιας προηγούμενης
+εντολής
+
+\begin{lstlisting}
+	add $s0, $t0, $t1
+	sub $t2, $s0, $t3
+\end{lstlisting}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\linewidth]{"Computer Architecture 2/screenshot001"}
+	\caption{Κίνδυνος δεδομένων.}
+	\label{fig:screenshot001}
+\end{figure}
+
+Το πρόβλημα μπορεί να αντιμετωπιστεί με \textbf{προώθηση}:\\
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\linewidth]{"Computer Architecture 2/screenshot002"}
+	\caption{Προώθηση}
+	\label{fig:screenshot002}
+\end{figure}
+
+Το πρόβλημα \textbf{Φόρτωσης/Χρήσης} μπορεί να λυθεί επίσης:\\
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\linewidth]{"Computer Architecture 2/screenshot003"}
+	\caption{Φόρτωση/Χρήση}
+	\label{fig:screenshot003}
+\end{figure}
+
+\newpage
+Μπορούμε να αποφύγουμε τις καθυστερήσεις με κατάλληλο \textbf{χρονοπρογραμματισμό}:\\
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\linewidth]{"Computer Architecture 2/screenshot004"}
+	\caption{Χρονοπρογραμματισμός}
+	\label{fig:screenshot004}
+\end{figure}
+
+\subsection{Κίνδυνοι δομής}
+
+Συμβαίνει στη διοχέτευση MIPS με μία μοναδική μνήμη. Οι εντολές load/store πραγματοποιούν προσπέλαση μνήμης και απαιτείται καθυστέρηση σε περίπτωση εκτέλεσης της μίας μετά την άλλη. Αυτό μπορεί να αποφευχθεί με τη χρήση ξεχωριστών μνημών.
+
+\newpage
+
+\subsection{Κίνδυνοι ελέγχου}
+
+Η προσκόμιση της επόμενης εντολής εξαρτάται από το αποτέλεσμα της διακλάδωσης.
+Η διοχέτευση δεν μπορεί να προσκομίσει πάντα τη σωστή εντολή, καθώς ακόμη δουλεύει στο στάδιο ID.
+
+Ένας τρόπος αντιμετώπισης είναι το \textbf{stall on branch}.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\linewidth]{"Computer Architecture 2/screenshot005"}
+	\caption{}
+	\label{fig:screenshot005}
+\end{figure}
+
+Ένας άλλος τρόπος αντιμετώπισης είναι με \textbf{πρόβλεψη διακλάδωσης}.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\linewidth]{"Computer Architecture 2/screenshot006"}
+	\caption{}
+	\label{fig:screenshot006}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\linewidth]{"Computer Architecture 2/screenshot007"}
+	\caption{}
+	\label{fig:screenshot007}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\linewidth]{"Computer Architecture 2/screenshot008"}
+	\caption{}
+	\label{fig:screenshot008}
+\end{figure}
+
+\newpage
+
+
+\subsection{Επιτάχυνση λόγω διοχέτευσης}
+
+Με την προϋπόθεση ότι όλα τα στάδια διαρκούν τον ίδιο χρόνο:
+
+\[\text{Χρόνος μεταξύ εντολών}_\text{Με διοχέτευση} = \frac{\text{Χρόνος μεταξύ εντολών}_\text{Χωρίς διοχέτευση}}{\text{Αριθμός σταδίων}}\]
+
+\subsection{Στάδια διοχέτευσης}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\linewidth]{"../../../../../../../../var/folders/tq/s8yk3mz91sb3rqmpy8996brw0000gn/T/TemporaryItems/NSIRD_screencaptureui_XAH157/Screenshot 2024-09-16 at 7.28.46 AM"}
+	\caption{}
+	\label{fig:screenshot-2024-09-16-at-7}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\linewidth]{"../../../../../../../../var/folders/tq/s8yk3mz91sb3rqmpy8996brw0000gn/T/TemporaryItems/NSIRD_screencaptureui_xNBZKs/Screenshot 2024-09-16 at 7.30.18 AM"}
+	\caption{}
+	\label{fig:screenshot-2024-09-16-at-71}
+\end{figure}
+
+\end{document}  
