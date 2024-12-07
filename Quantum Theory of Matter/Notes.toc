@@ -1,0 +1,11 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}Διαδικαστικά}{2}{}%
+\contentsline {section}{\numberline {2}Συγγράμματα}{2}{}%
+\contentsline {section}{\numberline {3}Βασικά Κλασικής Μηχανικής}{2}{}%
+\contentsline {subsection}{\numberline {3.1}Λαγκραζιανός Φορμαλισμός}{2}{}%
+\contentsline {subsection}{\numberline {3.2}Euler-Lagrange}{3}{}%
+\contentsline {section}{\numberline {4}Βασικά}{4}{}%
+\contentsline {section}{\numberline {5}Μεταθέτης}{4}{}%
+\contentsline {section}{\numberline {6}Η εξίσωση του Schroedinger}{5}{}%
+\contentsline {section}{\numberline {7}Χρησιμότητα Κυματοσυνάρτησης}{6}{}%
+\contentsline {section}{\numberline {8}Μοναδιαίοι Τελεστές}{8}{}%

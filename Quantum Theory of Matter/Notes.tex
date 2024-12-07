@@ -1,0 +1,250 @@
+\documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		
+\usepackage{blindtext}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage[greek,english]{babel}
+\usepackage{alphabeta}
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{pgfplots}
+\usepackage{braket}
+\usepackage{float}
+\usepackage{circuitikz}
+\usetikzlibrary{arrows.meta, decorations.markings}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+
+%------FOR DARK MODE USE-------
+%\pagecolor[rgb]{0,0,0}
+%\color[rgb]{1,1,1}
+%------------------------------
+
+%SetFonts
+
+%SetFonts
+
+\newcommand{\definition}[1]{
+	\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=\textbf{Ορισμός}]
+		\begin{center}
+			#1
+		\end{center}
+	\end{tcolorbox}
+}
+
+\newcommand{\property}[1]{
+	\begin{tcolorbox}[colback=red!5!white,colframe=red!75!black,title=\textbf{Ιδιότητα}]
+		\begin{center}
+			#1
+		\end{center}
+	\end{tcolorbox}
+}
+
+\newcommand{\suggestion}[1]{
+	\begin{tcolorbox}[colback=green!5!white,colframe=green!75!black,title=\textbf{Πρόταση}]
+		\begin{center}
+			#1
+		\end{center}
+	\end{tcolorbox}
+}
+
+\newcommand{\note}[1]{
+	\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!75!black,title=\textbf{Σημείωση}]
+		\begin{center}
+			#1
+		\end{center}
+	\end{tcolorbox}
+}
+
+\title{Κβαντική Θεωρία της Ύλης}
+\author{Κωνσταντίνος Ζουριδάκης}
+\date{}							% Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+\newpage
+
+\section{Διαδικαστικά}
+
+Θα έχουμε δύο δίωρα τέστ που θα πιάνουν σύνολο 6 μονάδες.
+Το τελικό διαγώνισμα θα πιάνει 4 μονάδες.
+
+Συνολικός βαθμός:
+
+\begin{align*}
+	\max\{60\% \ \text{τέστ} \ \times \ 40\% \ \text{διαγώνισμα}, 100\% \ \text{Διαγώνισμα}\}
+\end{align*}
+
+\section{Συγγράμματα}
+
+\begin{itemize}
+	\item Κβαντομηχανική 2 Τραχανάς 
+	\item Principles of Quantum Mechanics Shankar
+	\item Introductory Quantum Mechanics Liboff
+	\item Atomic and electronic structures of solids Kaxiras
+	\item Φυσική Στερεάς Κατάστασης Ι-ΙΙ Οικονόμου
+\end{itemize}
+
+\section{Βασικά Κλασικής Μηχανικής}
+
+\subsection{Λαγκραζιανός Φορμαλισμός}
+
+Υπολογισμός κλασικής τροχιάς (Αρχή Ελάχιστης Δράσης): \[x_{cl}(t_i + \Delta t)=\textcolor{red}{x(t_i)} + \textcolor{red}{\dot{x}(t_i)}\Delta t\]
+
+Τα $x(t_i)$ και $\dot{x}(t_i)$ είναι δεδομένα.
+
+Ο δεύτερος νόμος του Νεύτωνα μας λέει:
+
+\[m_j \frac{d^2 x_j}{dt^2}=-\frac{\partial V}{\partial x_j}\]
+
+Όπου $m_j$ είναι η μάζα του σωματιδίου $j$ και $x_j$ οι συντεταγμένες του σωματιδίου $j$.
+
+Για τον υπολογισμό κλασικής τροχίας θα θεωρούμε ότι μεταβαίνουμε από $(x_i,t_i)$ σε $(x_f,t_f)$.
+
+Μία global λύση για το πως καταλήγουμε από $(x_i,t_i) \rightarrow (x_f,t_f)$ είναι η Λαγκρανζιανή $L$ (μονάδα μέτρησης Joules (J)).
+
+Ορίζουμε:\[L = T - V= L(x, \dot{x},t)\]
+
+Όπου $T$ είναι η κινητική ενέργεια και $V$ είναι η δυναμική ενέργεια. Συνήθως τις $x$ και $\dot{x}$ τις γράφουμε σαν $q$ και $\dot{q}$ αντίστοιχα που αναπαριστούν γενικευμένες συντεταγμένες, δηλαδή μπορούν να έχουν οποιαδήποτε μορφή χωρίς απαραίτητα να είναι καρτεσιανές.
+
+Η δράση υπολογίζεται:
+\[\textcolor{blue}{S[x(t)]}=\int_{t_i}^{t_f} L(x,\dot{x}) \, dt\]
+
+Η $S[x(t)]$ (μονάδα μέτρησης Joule-seconds (Js)) είναι Functional (function of a function).
+Η κλασική τροχιά $x_{cl}$ είναι αυτή για την οποία η $S$ είναι μικρότερη.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{"Images/Screenshot 2024-10-28 at 8.35.19 PM"}
+	\caption{}
+	\label{fig:screenshot-2024-10-28-at-8}
+\end{figure}
+
+\note{\textbf{Function vs Functional}\\ 
+	\begin{center}
+		\begin{figure}[H]
+			\centering \textbf{Function:}
+			\[
+			f : x \in X \ \text{Number Field}\mapsto f(x) \in Y \ \text{Number Field}
+			\]
+			
+			\textbf{Functional:}
+			\[
+			\mathscr{F} : f(x) \in Y^X \ \text{Function Space} \mapsto \mathscr{F}[f(x)] \in Z \ \text{Number Field}
+			\]
+			
+			\[X, Y, Z \in \{\mathbb{R}, \mathbb{C}\}\]
+		\end{figure}
+	\end{center}
+}
+
+\subsection{Euler-Lagrange}
+\[\frac{\partial L}{\partial q} - \frac{d}{dt}\frac{\partial L}{\partial \dot{q}} = 0\]
+
+Η εξίσωση αυτή μας βοηθάει να βρούμε την εξίσωση $q(t)$ για την οποία η συναρτησιακή εξίσωση της δράσεις \textbf{εξτρεμίζεται}, δηλαδή έχει στάσιμο σημείο το οποίο είναι minimum, maximum ή saddle point.
+
+\section{Βασικά}
+
+Σημείωση: $\dot{x}$ είναι η χρονική παράγωγος, δηλαδή $\frac{\partial x}{\partial t}$.\\~\\
+
+Στην κβαντομηχανική η φυσική κατάσταση ενός σώματος περιγράφεται από μια κυματοσυνάρτηση $\Psi(x_i,t)$.
+
+Τα φυσικά μεγέθη σχετίζονται με τελεστές, δηλαδή μετασχηματισμούς που επενεργούν πάνω στις κυματοσυναρτήσεις. Π.χ. ο τελεστής θέσης $x$ που πολλαπλασιάζει την $\Psi$ με $x$.
+
+\property{\textbf{Γραμμικοί τελεστές:}
+	\[A[\psi_1(x) + \psi_2(x)]=A\psi_1(x)+A\psi_2(x), \forall \psi_1,\psi_2\]}
+\section{Μεταθέτης}
+
+Αν $A$ και $B$ δύο τελεστές, ο ορισμός του μεταθέτη λέει:
+
+\definition{$[A,B] = AB-BA$}
+
+Για τυχούσα κυματοσυνάρτηση $\psi$ δεν ισχύει απαραίτητα ότι $A(B\psi)=B(A\psi)$.
+Ισοδύναμα, δεν ισχύει εν γένει ότι $AB=BA$, δηλαδή \textbf{οι κβαντομηχανικοί τελεστές δεν μετατίθενται απαραίτητα}.
+
+\property{
+	\textbf{Βασικές ιδιότητες μεταθετών:}
+	\begin{align*}
+		[A,B]&=-[B,A]\\
+		[A,B+C]&=[A,B]+[A,C]\\
+		[A,BC]&=[A,B]C+B[A,C]\\
+		[Α,Β]^\dag &= [B^\dag,A^\dag]
+	\end{align*}
+	}
+	
+\suggestion{\textbf{Παράδειγμα μεταθέτη:}\[[x,p]=i\hbar\]}
+
+\suggestion{\textbf{Αν δύο τελεστές μετατίθονται, τότε ισχύει η ιδιότητα:}
+\[[A,B]=0\]}
+
+\section{Η εξίσωση του Schroedinger}
+
+Η Χαμιλτονιανή $H$ ενός συστήματος είναι ένας τελεστής που αντιστοιχεί στην συνολική ενέργεια του συστήματος (συμπεριλαμβάνεται δυναμική και κινητική ενέργεια).Ο τελεστής που αντιστοιχεί στο σύστημα συμβολίζεται $\mathbf{H}$.
+
+\suggestion{\textbf{Με τα παραπάνω δεδομένα, ισχύει ότι:} \[\mathbf{H}\psi = i \hbar \frac{\partial \psi}{\partial t}\]}
+
+Για $\mathbf{H}=\frac{p^2}{2m}+V(\mathbf{r})$ και με αντικατάσταση $\mathbf{p} \rightarrow-i\hbar \nabla$ προκύπτει:
+\[\mathbf{H}=-\frac{\hbar^2}{2m} \nabla^2 + V(\mathbf{r})\]
+
+Κάνοντας αντικατάσταση στην εξίσωση $\mathbf{H}\psi = i \hbar \frac{\partial \psi}{\partial t}$ καταλήγουμε:
+
+\definition{\textbf{Η κυματοσυνάρτηση που μας δίνει την χρονική εξέλιξη του συστήματος:}\[-\frac{\hbar^2}{2m}\nabla^2\psi + V(\mathbf{r})\psi = i\hbar \frac{\partial\psi}{\partial t}\]}
+
+\section{Χρησιμότητα Κυματοσυνάρτησης}
+
+Το τετράγωνο της απόλυτης τιμής της $\psi(\mathbf{r})$ μας δίνει την πυκνότητα πιθανότητας.
+
+\suggestion{Σε 1 διάσταση, για $P(x)=|\psi(x)|^2$ το γινόμενο $P(x)dx$ μας δίνει την πιθανότητα να βρούμε το σωματίδιο μεταξύ $x$ και $x+dx$.}
+
+\definition{\textbf{Η πιθανότητα να βρούμε το σωματίδιο μεταξύ $a$ και $b$ δίνεται από το:} \[P(a\leq x\leq b) = \int_{a}^{b} |\psi(x)|^2 \, dx\]}
+
+Μία κανονικοποιημένη κυματοσυνάρτηση μας λέει ότι αν ψάξουμε παντού, το σωματίδιο θα βρίσκεται κάπου με πιθανότητα 100\%, οπότε:
+
+\definition{\textbf{Η πιθανότητα να βρίσκεται το σωματίδιο οπουδήποτε:} \[\int_{-\infty}^{+\infty}|\psi(x)|^2 \, dx = 1\]}
+
+\definition{\textbf{Για δύο κυματοσυναρτήσεις $\psi(x)$ και $\phi(x)$ ορίζουμε το εσωτερικό γινόμενο ως το ολοκλήρωμα:}\[(\psi,\phi) = \int_{-\infty}^{+\infty} \psi^*(x) \phi(x) \, dx\] και ισχύει $(\psi,\phi) = (\phi,\psi)^*$}
+
+\note{\textbf{Μιγαδικός συζυγής:}\[\text{αν} \ z=x+iy \, (x,y \in \Re), \text{τότε} \ z^* \equiv x-iy\]}
+
+\definition{Για μία κυματοσυνάρτηση $\psi(x)$ και έναν τελεστή $A$ ορίζουμε ως \textbf{μέση τιμή} το ολοκλήρωμα:\[\braket{A}=\int_{-\infty}^{+\infty} \psi^*(x) A \psi(x) \, dx\]
+Η μέση τιμή $\braket{A}$ είναι και η \textbf{αναμενόμενη τιμή} για το φυσικό μέγεθος $A$ όταν γίνεται μέτρησή του ενώ το σύστημα είναι στην κατάσταση $\psi(x)$.}
+
+\definition{\textbf{Αβεβαιότητα μέτρησης}:\[\Delta A = \sqrt{\braket{A^2}-\braket{A}^2}\] όπου: \[\braket{A^2} = \int_{-\infty}^{+\infty} \psi^*(x) A^2 \psi(x) \, dx\] και $\braket{A}$ η μέση τιμή.}
+
+Θέλουμε να εγγυηθούμε ότι η μέση τιμή $\braket{A}$ είναι πραγματικός αριθμός. Η ιδιότητα αυτή εξασφαλίζεται με την απαίτηση ότι τα φυσικά μεγέθη παριστάνονται στην Κβαντομηχανική με \textbf{εριμιτιανούς τελεστές}. Γενικότερα, όλοι οι τελεστές που περιγράφουν φυσικά μεγέθη \textbf{πρέπει} να είναι εριμιτιανοί.
+
+\definition{\textbf{Ένας τελεστής $A$ είναι εριμιτιανός αν ισχύει:} \[\int \psi^* (A\phi) \, dr = \int(A\psi)^* \phi \, dr\] ή αλλιώς $(\psi,A\phi) = (A\psi,\phi)$ όπου $\psi,\phi$ κυματοσυναρτήσεις.}
+
+Οι ιδιοτιμές ενός ερμιτιανού τελεστή είναι πραγματικοί αριθμοί και οι ιδιοσυναρτήσεις ερμιτιανού τελεστη που αντισοιχούν σε διαφορετικές ιδιοτιμές είναι ορθογώνιες μεταξύ τους.
+
+\suggestion{\textbf{Αφού οι εριμιτιανοί τελεστές είναι πραγματικοί αριθμοί, για την μέση τιμή εριμιτιανού τελεστή ισχύει:} \[\braket{A}^* = \int[\psi^* (A\psi)]^* \, dr = \int(A\psi)^* \psi \, dr = \int \psi^* (A\psi) \, dr = \braket{A}\]
+Δηλαδή, οι \textbf{μέσες τιμές} εριμιτιανών τελεστών είναι \textbf{πραγματικοί αριθμοί}.}
+
+\definition{\textbf{Ο συζυγής ενός τελεστή $A$ είναι ο τελεστής $A^\dagger$ για τον οποίο ισχύει:}\[(\psi,A\phi)=(A^\dagger \psi,\phi)\]
+Για τους \textbf{εριμιτιανούς} τελεστές ισχύει $A=A^\dagger$. Με αφορμή αυτό, οι εριμιτιανοί τελεστές ονομάζονται \textbf{αυτοσυζυγείς}.}
+
+\property{\textbf{Ιδιότητες συζυγών τελεστών:}
+\begin{align*}
+	(A^\dagger)^\dagger &= A \\
+	(A+B)^\dagger &= A^\dagger + B^\dagger \\
+	(AB)^\dagger &= B^\dagger A^\dagger \\
+	(ABC)^\dagger &= C^\dagger B^\dagger A^\dagger
+	\end{align*}}
+
+\section{Μοναδιαίοι Τελεστές}
+
+\definition{\textbf{Τελεστές για τους οποίους ισχύει $U^\dagger = U^{-1}$ ονομάζονται μοναδιαίοι.}}
+
+Οι μοναδιαίοι τελεστές χρησιμοποιούνται για την περιστροφή του συστήματος συντεταγμένων. Επειδή θα πρέπει να ισχύει ότι $(U\psi,U\phi) = (\psi,\phi)$ προκύπτει ο παραπάνω ορισμός $U^\dagger = U^{-1}$.
+
+TODO: Περισσότερη ανάλυση μοναδιαίων αν γίνεται.
+
+\end{document}  
