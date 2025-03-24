@@ -1,0 +1,36 @@
+\subsection{Basics}
+An \textbf{object} in OpenGL is a collection of options that represents a subset of OpenGL's state. For example, we could have an object that represents the settings of the drawing window; we could then set its size, how many colors it supports and so on. One could visualize an object as a C-like struct:
+\begin{lstlisting}[language=C++]
+    struct object_name {
+    float  option1;
+    int    option2;
+    char[] name;
+    };
+\end{lstlisting}
+
+Whenever we want to use objects it generally looks something like this (with OpenGL's context visualized as a large struct):
+\begin{lstlisting}[language=C++]
+    // The State of OpenGL
+    struct OpenGL_Context {
+      	...
+      	object_name* object_Window_Target;
+      	...  	
+    };
+\end{lstlisting}
+
+\begin{lstlisting}[language=C++]
+    // create object
+    unsigned int objectId = 0;
+    glGenObject(1, &objectId);
+    // bind/assign object to context
+    glBindObject(GL_WINDOW_TARGET, objectId);
+    // set options of object currently bound to GL_WINDOW_TARGET
+    glSetObjectOption(GL_WINDOW_TARGET, GL_OPTION_WINDOW_WIDTH,  800);
+    glSetObjectOption(GL_WINDOW_TARGET, GL_OPTION_WINDOW_HEIGHT, 600);
+    // set context target back to default
+    glBindObject(GL_WINDOW_TARGET, 0);
+\end{lstlisting}
+
+This little piece of code is a workflow you'll frequently see when working with OpenGL. We first create an object and store a reference to it as an id (the real object's data is stored behind the scenes). Then we bind the object (using its id) to the target location of the context (the location of the example window object target is defined as \verb|GL_WINDOW_TARGET|). Next we set the window options and finally we un-bind the object by setting the current object id of the window target to 0. The options we set are stored in the object referenced by objectId and restored as soon as we bind the object back to \verb|GL_WINDOW_TARGET|.
+
+The great thing about using these objects is that we can define more than one object in our application, set their options and whenever we start an operation that uses OpenGL's state, we bind the object with our preferred settings. There are objects for example that act as container objects for 3D model data (a house or a character) and whenever we want to draw one of them, we bind the object containing the model data that we want to draw (we first created and set options for these objects). Having several objects allows us to specify many models and whenever we want to draw a specific model, we simply bind the corresponding object before drawing without setting all their options again.
