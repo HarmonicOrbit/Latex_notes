@@ -1,0 +1,191 @@
+% Document Layout
+\usepackage{geometry}
+\geometry{letterpaper}
+
+% Graphics and Figures
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{import}
+\usepackage{mdframed}
+\usetikzlibrary{positioning}
+
+% Language and Encoding
+\usepackage[T1]{fontenc}
+\usepackage[main=english,greek]{babel}
+
+% Mathematics
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+% Algorithms
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% Boxes and Formatting
+\usepackage{tcolorbox}
+\usepackage{float}
+
+% Code Listings
+\usepackage{listings}
+% Define Custom Colors
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{linenumbergray}{rgb}{0.9,0.9,0.9}
+\definecolor{framegray}{rgb}{0.7,0.7,0.7}
+
+% Listings Configuration
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen}\itshape,
+    keywordstyle=\color{magenta}\bfseries,
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\small\linespread{1.2},
+    breaklines=true,
+    numbers=none,  % 🚀 No line numbers
+    numbersep=5pt,
+    showstringspaces=false,
+    tabsize=2,
+    frame=single,
+    rulecolor=\color{framegray},
+    frameround=tttt,
+    framesep=5pt,
+    xleftmargin=10pt,
+    xrightmargin=10pt,
+    linewidth=\linewidth,
+    columns=fullflexible
+}
+\lstset{style=mystyle}
+
+% Define Custom mdframed Environments
+
+% Definition Box
+\newmdenv[
+  backgroundcolor=blue!5,
+  linecolor=blue!75!black,
+  roundcorner=10pt,
+  linewidth=1pt,
+  innertopmargin=0.5em,
+  innerbottommargin=0.5em,
+  innerleftmargin=1em,
+  innerrightmargin=1em,
+  skipabove=1em,
+  skipbelow=1em
+]{definition}
+
+% Property Box
+\newmdenv[
+  backgroundcolor=red!5,
+  linecolor=red!75!black,
+  roundcorner=10pt,
+  linewidth=1pt,
+  innertopmargin=0.5em,
+  innerbottommargin=0.5em,
+  innerleftmargin=1em,
+  innerrightmargin=1em,
+  skipabove=1em,
+  skipbelow=1em
+]{important}
+
+% Note Box
+\newmdenv[
+  backgroundcolor=green!5,
+  linecolor=green!75!black,
+  roundcorner=10pt,
+  linewidth=1pt,
+  innertopmargin=0.5em,
+  innerbottommargin=0.5em,
+  innerleftmargin=1em,
+  innerrightmargin=1em,
+  skipabove=1em,
+  skipbelow=1em
+]{note}
+
+% Reminder Box
+\newmdenv[
+  backgroundcolor=yellow!5,
+  linecolor=yellow!75!black,
+  roundcorner=10pt,
+  linewidth=1pt,
+  innertopmargin=0.5em,
+  innerbottommargin=0.5em,
+  innerleftmargin=1em,
+  innerrightmargin=1em,
+  skipabove=1em,
+  skipbelow=1em
+]{reminder}
+
+% Math Operators and Shortcuts
+\DeclareMathOperator{\sinc}{sinc}
+\DeclareMathOperator{\rect}{rect}
+\newcommand{\bigO}{\mathcal{O}}
+\newcommand{\ra}{\Rightarrow}
+\newcommand{\header}[1]{\begin{center}\noindent\textbf{\Large #1}\end{center}}
+\newcommand{\en}[1]{\foreignlanguage{english}{#1}}
+\newcommand{\gr}[1]{\foreignlanguage{greek}{#1}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
+\newcommand{\parenth}[1]{\left( #1 \right)}
+\newcommand{\brackets}[1]{\left[ #1 \right]}
+\newcommand{\cbrackets}[1]{\left\{ #1 \right\}}
+
+\lstnewenvironment{cpp}[1][]{
+  \lstset{language=C++,frame=single,#1}
+}{}
+
+% Import Figures (if needed)
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+
+% Define Custom Colors for GLSL
+\definecolor{glslcomment}{rgb}{0,0.6,0}
+\definecolor{glslkeyword}{rgb}{0.2,0.2,0.7}
+\definecolor{glslstring}{rgb}{0.8,0.1,0.1}
+\definecolor{glslbackground}{rgb}{0.95,0.95,0.92}
+\definecolor{glslnumbers}{rgb}{0.5,0.5,0.5}
+
+% Define GLSL Language for Listings
+\lstdefinelanguage{GLSL}{
+    morekeywords={
+        attribute,const,uniform,varying,layout,centroid,flat,smooth,noperspective,
+        break,continue,do,for,while,switch,case,default,if,else,in,out,inout,float,
+        int,void,bool,true,false,invariant,discard,return,mat2,mat3,mat4,vec2,vec3,
+        vec4,ivec2,ivec3,ivec4,bvec2,bvec3,bvec4,uint,uvec2,uvec3,uvec4,sampler1D,
+        sampler2D,sampler3D,samplerCube,sampler1DShadow,sampler2DShadow,
+        samplerCubeShadow,sampler1DArray,sampler2DArray,sampler1DArrayShadow,
+        sampler2DArrayShadow,isampler1D,isampler2D,isampler3D,isamplerCube,
+        isampler1DArray,isampler2DArray,usampler1D,usampler2D,usampler3D,
+        usamplerCube,usampler1DArray,usampler2DArray,struct
+    },
+    sensitive=true,
+    morecomment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    morestring=[b]",
+    morestring=[b]'
+}
+
+% Define the glsl Environment
+\lstnewenvironment{glsl}{
+  \lstset{
+    language=GLSL,
+    backgroundcolor=\color{glslbackground},
+    commentstyle=\color{glslcomment}\itshape,
+    keywordstyle=\color{glslkeyword}\bfseries,
+    stringstyle=\color{glslstring},
+    numberstyle=\tiny\color{glslnumbers},
+    basicstyle=\ttfamily\footnotesize,
+    numbers=none,
+    numbersep=5pt,
+    frame=single,
+    breaklines=true,
+    tabsize=2,
+    showstringspaces=false,
+    captionpos=b,
+    columns=fullflexible
+  }
+}{}
