@@ -3,6 +3,8 @@
 \contentsline {subsection}{\numberline {1.1}Normalized Device Coordinates (NDC)}{1}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Graphics Pipeline}{1}{subsection.1.2}%
 \contentsline {subsection}{\numberline {1.3}Vertex Buffer Data}{2}{subsection.1.3}%
-\contentsline {subsection}{\numberline {1.4}VBO, VAO, EBO}{2}{subsection.1.4}%
-\contentsline {subsection}{\numberline {1.5}Hello Window}{2}{subsection.1.5}%
-\contentsline {subsection}{\numberline {1.6}Hello Triangle}{3}{subsection.1.6}%
+\contentsline {subsection}{\numberline {1.4}VBO, VAO, EBO}{3}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Shaders}{3}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Textures}{3}{subsection.1.6}%
+\contentsline {subsection}{\numberline {1.7}Hello Window}{4}{subsection.1.7}%
+\contentsline {subsection}{\numberline {1.8}Hello Triangle}{4}{subsection.1.8}%
